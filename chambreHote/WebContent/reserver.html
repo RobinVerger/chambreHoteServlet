@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="chambre d'hôte">
+<meta name="keywords" content="chambre, hote">
+<meta name="author" content="Robin">
+<title>Chambre d'hôtes | Bienvenue</title>
+<link rel="stylesheet" href="css/materialize.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+</head>
+
+<body class="">
+	<header>
+		<div class="teal lighten-1">
+			<div id="branding">
+				<a href="" class="float brand-logo"><img class="responsive-img"
+					id="logo" src="logo.png" /></a>
+			</div>
+
+			<nav class="teal lighten-1">
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i
+					class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="contact.html">Nous Contacter</a></li>
+				</ul>
+			</nav>
+	</header>
+
+	<br>
+	<div class="row">
+		<form class="col s12" action="/chambreHote/Chambre" method="post">
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">account_circle</i> <input
+						name="nom" type="text" class="validate"> <label for="nom">Nom</label>
+				</div>
+				<div class="input-field col s6">
+					<i class="material-icons prefix">account_circle</i> <input
+						name="prenom" type="text" class="validate"> <label
+						for="prenom">Prénom</label>
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				<div class="row">
+					<div class="input-field col s6">
+						<i class="material-icons prefix">call</i> <input name="telephone"
+							type="text" class="validate"> <label for="telephone">Téléphone</label>
+					</div>
+					<div class="input-field col s6">
+						<i class="material-icons prefix">mail</i> <input name="email"
+							type="email" class="validate"> <label for="email">Email</label>
+					</div>
+				</div>
+
+
+
+			</div>
+
+			<div class="row">
+
+				<div class="row">
+					<div class="input-field col s6">
+						<i class="material-icons prefix">date_range</i> <input
+							name="arrivee" type="text" class="datepicker"> <label
+							for="arrivee">Date d'arrivée</label>
+					</div>
+					<div class="input-field col s6">
+						<i class="material-icons prefix">date_range</i> <input
+							name="depart" type="text" class="datepicker"> <label
+							for="depart">Date de Départ</label>
+					</div>
+				</div>
+
+
+
+			</div>
+
+
+			<div class="row">
+				<div class="col s4">
+					<div class="intro-text">
+						<h5>Options</h5>
+
+						<p>
+							<input type="checkbox" id="parking" name="option" value="Parking" />
+							<label for="parking">Parking</label>
+						</p>
+						<p>
+							<input type="checkbox" id="animal" name="option" value="Animal" />
+							<label for="animal">Animal</label>
+						</p>
+						<p>
+							<input type="checkbox" id="fumeur" name="option" value="Fumeur" />
+							<label for="fumeur">Fumeur</label>
+
+						</p>
+
+
+					</div>
+				</div>
+				<div class="col s4">
+					<div class="intro-text">
+						<h5>Type de séjour</h5>
+
+						<p>
+							<input name="myradio" type="radio" id="testa"
+								value="Professionel" checked /> <label for="testa">Professionel</label>
+						</p>
+						<p>
+							<input name="myradio" type="radio" id="testb" value="Loisir" /> <label
+								for="testb">Loisir</label>
+						</p>
+					</div>
+
+				</div>
+			</div>
+
+
+
+			<div class="row">
+				<div class="input-field col s4">
+
+					<div class="intro-text">
+
+						<h5>Nombre de personnes</h5>
+
+
+						<p>
+							<select name="nbrePersonne" id="nbrePersonne">
+								<option value="1" selected>1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6+">6+</option>
+							</select>
+						</p>
+
+					</div>
+				</div>
+
+
+				<div class="input-field col s4">
+					<div class="intro-region">
+						<h5>Région d'origine</h5>
+
+
+						<p>
+							<select name="departements" id="departements"
+								onClick="document.formulaire.codepostal.value=document.formulaire.departements.value;">
+								<option value="0"></option>
+								<option value="01">01 - Ain</option>
+								<option value="02">02 - Aisne</option>
+								<option value="03">03 - Allier</option>
+								<option value="04">04 - Alpes-de-Haute-Provence</option>
+								<option value="05">05 - Hautes-Alpes</option>
+								<option value="06">06 - Alpes-Maritimes</option>
+								<option value="07">07 - Ardeche</option>
+								<option value="08">08 - Ardennes</option>
+								<option value="09">09 - Ariege</option>
+								<option value="10">10 - Aube</option>
+								<option value="11">11 - Aude</option>
+								<option value="12">12 - Aveyron</option>
+								<option value="13">13 - Bouches-du-Rhone</option>
+								<option value="14">14 - Calvados</option>
+								<option value="15">15 - Cantal</option>
+								<option value="16">16 - Charente</option>
+								<option value="17">17 - Charente-Maritime</option>
+								<option value="18">18 - Cher</option>
+								<option value="19">19 - Correze</option>
+								<option value="2A">2A - Corse-du-Sud</option>
+								<option value="2B">2B - Haute-Corse</option>
+								<option value="21">21 - Cote-d'Or</option>
+								<option value="22">22 - Cotes-d'Armor</option>
+								<option value="23">23 - Creuse</option>
+								<option value="24">24 - Dordogne</option>
+								<option value="25">25 - Doubs</option>
+								<option value="26">26 - Drome</option>
+								<option value="27">27 - Eure</option>
+								<option value="28">28 - Eure-et-Loir</option>
+								<option value="29">29 - Finistere</option>
+								<option value="30">30 - Gard</option>
+								<option value="31">31 - Haute-Garonne</option>
+								<option value="32">32 - Gers</option>
+								<option value="33">33 - Gironde</option>
+								<option value="34">34 - Herault</option>
+								<option value="35">35 - Ille-et-Vilaine</option>
+								<option value="36">36 - Indre</option>
+								<option value="37">37 - Indre-et-Loire</option>
+								<option value="38">38 - Isere</option>
+								<option value="39">39 - Jura</option>
+								<option value="40">40 - Landes</option>
+								<option value="41">41 - Loir-et-Cher</option>
+								<option value="42">42 - Loire</option>
+								<option value="43">43 - Haute-Loire</option>
+								<option value="44">44 - Loire-Atlantique</option>
+								<option value="45">45 - Loiret</option>
+								<option value="46">46 - Lot</option>
+								<option value="47">47 - Lot-et-Garonne</option>
+								<option value="48">48 - Lozere</option>
+								<option value="49">49 - Maine-et-Loire</option>
+								<option value="50">50 - Manche</option>
+								<option value="51">51 - Marne</option>
+								<option value="52">52 - Haute-Marne</option>
+								<option value="53">53 - Mayenne</option>
+								<option value="54">54 - Meurthe-et-Moselle</option>
+								<option value="55">55 - Meuse</option>
+								<option value="56">56 - Morbihan</option>
+								<option value="57">57 - Moselle</option>
+								<option value="58">58 - Nievre</option>
+								<option value="59">59 - Nord</option>
+								<option value="60">60 - Oise</option>
+								<option value="61">61 - Orne</option>
+								<option value="62">62 - Pas-de-Calais</option>
+								<option value="63">63 - Puy-de-Dome</option>
+								<option value="64">64 - Pyrenees-Atlantiques</option>
+								<option value="35">65 - Hautes-Pyrenees</option>
+								<option value="66">66 - Pyrenees-Orientales</option>
+								<option value="67">67 - Bas-Rhin</option>
+								<option value="68">68 - Haut-Rhin</option>
+								<option value="69">69 - Rhone</option>
+								<option value="70">70 - Haute-Saone</option>
+								<option value="71">71 - Saone-et-Loire</option>
+								<option value="72">72 - Sarthe</option>
+								<option value="73">73 - Savoie</option>
+								<option value="74">74 - Haute-Savoie</option>
+								<option value="75">75 - Paris</option>
+								<option value="76">76 - Seine-Maritime</option>
+								<option value="77">77 - Seine-et-Marne</option>
+								<option value="78">78 - Yvelines</option>
+								<option value="79">79 - Deux-Sevres</option>
+								<option value="80">80 - Somme</option>
+								<option value="81">81 - Tarn</option>
+								<option value="82">82 - Tarn-et-Garonne</option>
+								<option value="83">83 - Var</option>
+								<option value="84">84 - Vaucluse</option>
+								<option value="85">85 - Vendee</option>
+								<option value="86">86 - Vienne</option>
+								<option value="87">87 - Haute-Vienne</option>
+								<option value="88">88 - Vosges</option>
+								<option value="89">89 - Yonne</option>
+								<option value="90">90 - Territoire de Belfort</option>
+								<option value="91">91 - Essonne</option>
+								<option value="92">92 - Hauts-de-Seine</option>
+								<option value="93">93 - Seine-Saint-Denis</option>
+								<option value="94">94 - Val-de-Marne</option>
+								<option value="95">95 - Val-d'Oise</option>
+								<option value="971">971 - Guadeloupe</option>
+								<option value="972">972 - Martinique</option>
+								<option value="973">973 - Guyane</option>
+								<option value="974">974 - Réunion</option>
+								<option value="975">975 - Saint-Pierre-et-Miquelon</option>
+								<option value="984">984 -
+									Terres-australes-et-antarctiques-françaises</option>
+								<option value="985">985 - Mayotte</option>
+								<option value="986">986 - Wallis-et-Futuna</option>
+								<option value="987">987 - Polynesie-franeaise</option>
+								<option value="988">988 - Nouvelle-Caledonie</option>
+							</select>
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+
+			<button class="btn waves-effect waves-light teal lighten-1"
+				type="submit" name="action">
+				Valider<i class="material-icons right">send</i>
+			</button>
+
+
+
+			<br></br>
+		</form>
+		<div><a href="/chambreHote/Chambre">Billets enregistrés</a></div>
+	</div>
+
+	<br>
+
+	<footer class="teal lighten-1">
+		<div>
+			<a class="mt-facebook mt-share-inline-square-sm"
+				href="https://www.facebook.com/sharer/sharer.php?u="> <img
+				src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png">
+			</a> <a class="mt-twitter mt-share-inline-square-sm"
+				href="http://twitter.com/intent/tweet?text=&amp;url="> <img
+				src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png">
+			</a> <a class="mt-linkedin mt-share-inline-square-sm"
+				href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;summary=">
+				<img src="http://mojotech-static.s3.amazonaws.com/linkedin@2x.png">
+			</a>
+		</div>
+		<p>Rob1, Copyright &copy; 2017</p>
+
+
+	</footer>
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script>
+		$('.datepicker').pickadate({
+			selectMonths : true, // Creates a dropdown to control month
+			selectYears : 15, // Creates a dropdown of 15 years to control year,
+			today : 'Today',
+			clear : 'Clear',
+			close : 'Ok',
+			closeOnSelect : false, // Close upon selecting a date,
+			format : 'dd/mm/yyyy'
+		});
+
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+
+		$('select').material_select('destroy');
+	</script>
+
+	<script>
+		var element = document.getElementById('valid');
+
+		element.addEventListener('click', affiche);
+
+		/*  function affiche() {
+
+
+
+		   var montantDevis = 0;
+
+		   var montantPersonnes = 0;
+
+		   var montantParking = 0;
+
+		   var montantAnimal = 0;
+
+		   var nombreDeNuits = 0;
+
+		   var Date1 = new Date(document.getElementById('arrivee').value);
+
+		   var Date2 = new Date(document.getElementById('depart').value);
+
+		   nombreDeNuits = Math.abs(Math.ceil((Date2.getTime() - Date1.getTime()) / (1000 * 60 * 60 * 24)));
+
+
+
+		   var O_Select = document.getElementById('nbrePersonne');
+
+		   var index = O_Select.selectedIndex;
+
+
+
+		   montantPersonnes = O_Select.options[index].value * 85;
+
+
+
+
+
+		   if (document.getElementById('parking').checked) {
+
+		     montantParking = 50;
+
+		   }
+
+		   if (document.getElementById('animaux').checked) {
+
+		     montantAnimal = 35;
+
+		   }
+
+		   montantDevis = nombreDeNuits * (montantPersonnes + montantParking + montantAnimal);
+
+		   var divDevis = document.getElementById('resultat');
+
+		   divDevis.innerHTML = montantDevis;
+
+		 } */
+	</script>
+	</script>
+
+</body>
+</html>
