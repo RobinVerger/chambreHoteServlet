@@ -1,6 +1,7 @@
 package chambreHote;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.simplon.jdbc.Jdbc;
 import enregistrement.Reponse;
 import reservation.Reservation;
 /**
@@ -94,6 +96,8 @@ public class ChambreServlet extends HttpServlet {
 			request.setAttribute("arrivee", arrivee);
 			request.setAttribute("depart", depart);
 			request.setAttribute("nbrePersonne", nbrePersonne);
+			request.setAttribute("myradio", myradio);
+			
 			
 			Reservation newReservation = new Reservation();
 			newReservation.setNom(nom);
@@ -104,12 +108,39 @@ public class ChambreServlet extends HttpServlet {
 			newReservation.setDepart(depart);
 			newReservation.setNbrePersonne(nbrePersonne);
 			
+			
 			try {
 				Reservation.getInstance().addResa(newReservation);
 			} catch (Exception e) {
+
+				e.printStackTrace();
+			}
+			
+			Jdbc connect = new Jdbc();
+			try {
+				connect.connexion();
+			} catch (ClassNotFoundException e) {
+
+				e.printStackTrace();
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+			try {
+				connect.insertData(nom, prenom, email, telephone, arrivee, depart, nuitee, nbrePersonne, myradio);
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+			
+			try {
+				connect.showData();
+			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			
 			request.setAttribute("reservation", newReservation);
 			this.getServletContext().getRequestDispatcher("/reservation.jsp").forward(request, response);
 		}
